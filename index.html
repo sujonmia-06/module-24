@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to my blog website</h1>
+    </header>
+    <main>
+      <section id="blogs" class="blogs">
+        <header>
+          <h2>Blogs List</h2>
+          <ul id="blog-list">
+            <li>Blog-1</li>
+            <li>Blog-2</li>
+            <li>Blog-3</li>
+          </ul>
+        </header>
+        <article class="blog">
+          <h3>Blog-1</h3>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+            suscipit corporis nisi itaque ratione saepe, magnam assumenda quae.
+            Dolores nisi accusamus harum impedit maiores quas. Harum laborum
+            quia unde! Repudiandae.
+          </p>
+        </article>
+        <article id="second-blog" class="blog">
+          <h3 id="second-title">Blog-2</h3>
+          <p>
+            Architecto omnis, rem ea, cumque, sit reiciendis dolor minima
+            accusantium iure eum quibusdam recusandae. Eligendi, delectus quos.
+            Officia, illo praesentium ex adipisci cupiditate recusandae, aut
+            provident quo magni doloribus autem.
+          </p>
+        </article>
+        <article class="blog">
+          <h3 id="third-title">Blog-3</h3>
+          <p>
+            Aliquid, aliquam. Soluta velit distinctio praesentium illum natus ut
+            quidem accusamus ex veniam eum nihil maiores sed enim exercitationem
+            modi ratione nobis, saepe at. Consequatur qui totam quo
+            reprehenderit culpa.
+          </p>
+        </article>
+      </section>
+    </main>
+    <script>
+      const student = { name: "Boga mia", age: 19, height: 60 };
+      //   console.log(document.body);
+      const blogPara = document.getElementsByTagName("p");
+      for (const p of blogPara) {
+        // console.log(p.innerText);
+      }
+
+      // get element by id
+      const secondTitle = document.getElementById("second-title");
+      secondTitle.style.textAlign = "center";
+      secondTitle.style.color = "red";
+      secondTitle.style.fontSize = "35px";
+      secondTitle.style.backgroundColor = "green";
+      secondTitle.style.borderRadius = "10px";
+      secondTitle.style.padding = "10px 0px";
+
+      const thirdTitle = document.getElementById("third-title");
+      thirdTitle.innerText = "This title is changed by using javascript";
+      thirdTitle.style.color = "midnightblue";
+      thirdTitle.style.backgroundColor = "wheat";
+
+      // create and add an element by javascript
+      // create the element
+      const li = document.createElement("li");
+      li.innerText = "Blog-4";
+      // where to add
+      const ul = document.getElementById("blog-list");
+
+      // append new element
+      ul.appendChild(li);
+
+      // add article
+      const article = document.createElement("article");
+      article.classList.add("blog");
+      // const h3 = document.createElement("h3");
+      // h3.innerText = "My blog 4";
+      // const p = document.createElement("p");
+      // p.innerText =
+      //   "Architecto omnis, rem ea, cumque, sit reiciendis dolor minima accusantium iure eum quibusdam recusandae. Eligendi, delectus quos. Officia, illo praesentium ex adipisci cupiditate recusandae, aut provident quo magni doloribus autem.";
+      // article.appendChild(h3);
+      // article.appendChild(p);
+      article.innerHTML = `
+      <h3>My blog 4</h3>
+      <p>Architecto omnis, rem ea, cumque, sit reiciendis dolor minima accusantium iure eum quibusdam recusandae. Eligendi, delectus quos. Officia, illo praesentium ex adipisci cupiditate recusandae, aut provident quo magni doloribus autem.</p>
+      `;
+
+      // parent of article
+      const blogSection = document.getElementById("blogs");
+      blogSection.appendChild(article);
+
+      // get elements by id
+      const blogs = document.getElementsByClassName("blog");
+      for (const blog of blogs) {
+        blog.style.border = "2px solid orange";
+        blog.style.borderRadius = "10px";
+        blog.style.margin = "5px";
+        blog.style.padding = "5px";
+      }
+    </script>
+  </body>
+</html>
